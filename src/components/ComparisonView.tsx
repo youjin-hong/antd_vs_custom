@@ -1,5 +1,4 @@
 import type { ReactNode } from 'react'
-import './ComparisonView.css'
 
 interface ComparisonViewProps {
   antd: ReactNode
@@ -8,14 +7,14 @@ interface ComparisonViewProps {
 
 function ComparisonView({ antd, custom }: ComparisonViewProps) {
   return (
-    <div className="comparison-view">
-      <section className="comparison-panel">
-        <h3>Antd</h3>
-        <div className="comparison-panel-body">{antd}</div>
+    <div className="flex flex-col gap-6 md:flex-row">
+      <section className="flex-1 min-w-0 rounded-lg border border-border p-4">
+        <h3 className="mb-3 text-sm font-semibold text-text-h">Antd</h3>
+        <div>{antd}</div>
       </section>
-      <section className="comparison-panel">
-        <h3>Custom</h3>
-        <div className="comparison-panel-body">{custom}</div>
+      <section className="flex-1 min-w-0 rounded-lg border border-border p-4">
+        <h3 className="mb-3 text-sm font-semibold text-text-h">Custom</h3>
+        <div>{custom}</div>
       </section>
     </div>
   )

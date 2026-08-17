@@ -1,7 +1,6 @@
 import type { TabsProps } from 'antd'
 import { Tabs } from 'antd'
 import { comparisons } from './comparisons'
-import './App.css'
 
 const tabItems: TabsProps['items'] = comparisons.map(
   ({ key, label, Component }) => ({
@@ -13,8 +12,10 @@ const tabItems: TabsProps['items'] = comparisons.map(
 
 function App() {
   return (
-    <div id="app-shell">
-      <h1>Antd vs Custom</h1>
+    <div className="mx-auto w-full max-w-[1126px] px-5 py-6 lg:py-8">
+      <h1 className="my-5 text-[36px] font-medium tracking-[-1.68px] text-text-h lg:my-8 lg:text-[56px]">
+        Antd vs Custom
+      </h1>
       <Tabs items={tabItems} />
     </div>
   )

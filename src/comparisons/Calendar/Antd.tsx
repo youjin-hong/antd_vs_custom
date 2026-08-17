@@ -1,7 +1,6 @@
 import { Badge, Calendar } from "antd";
 import type { Dayjs } from "dayjs";
 import type { BadgeProps, CalendarProps } from "antd";
-import "./Antd.css";
 
 interface Event {
   type: BadgeProps["status"];
@@ -25,9 +24,9 @@ const cellRender: CalendarProps<Dayjs>["cellRender"] = (date, info) => {
   if (info.type !== "date") return info.originNode;
 
   return (
-    <ul className="antd-calendar-events">
+    <ul className="m-0 list-none p-0">
       {getEvents(date).map((event) => (
-        <li key={event.content}>
+        <li key={event.content} className="mb-0.5">
           <Badge status={event.type} text={event.content} />
         </li>
       ))}
